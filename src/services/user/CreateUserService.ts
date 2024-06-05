@@ -9,7 +9,6 @@ interface UserRequest {
     nomeUsuario: string;
     senha: string;
 }
-
 class CreateUserService {
     async execute({ email, nomeUsuario, senha }: UserRequest) {
         // Verifica se o email foi enviado
@@ -36,11 +35,11 @@ class CreateUserService {
             }
         })
         /*-----------------------------------------------------
-        Neste ponto, grave um BD com os seguintes atributos
-            email (É o email do usuario que foi enviado o toke)
-            Token (Token gerado - "codigoGerado")
-            data/hora da gravação (Para controlar o tempo de espera da confirmação) 
-        --------------------------------------------------------*/
+        *Neste ponto, grave um BD com os seguintes atributos
+        *    email (É o email do usuario que foi enviado o toke)
+        *    Token (Token gerado - "codigoGerado")
+        *    data/hora da gravação (Para controlar o tempo de espera da confirmação) 
+        *--------------------------------------------------------*/
         this.enviaEmail(email)
             .then(codigoGerado => {
                 console.log('Código gerado:', codigoGerado);
@@ -71,8 +70,8 @@ class CreateUserService {
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     private async enviaEmail(emailTO: string): Promise<string> {
         // Gerar código fácil
-        const emailFROM = 'profchvp@gmail.com';//Email origem
-        const emailUSER = 'profchvp@gmail.com';//Conta do EMAIL
+        const emailFROM = 'seuemail@gmail.com';//Email origem
+        const emailUSER = 'seuemail@gmail.com';//Conta do EMAIL
         const gerarCodigoFacil = (length: number) => {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let codigo = '';
@@ -95,7 +94,7 @@ class CreateUserService {
             service: 'Gmail',
             auth: {
                 user: emailUSER,
-                pass: 'ejtn wrcm mtya qzjx',
+                pass: 'xxxx yyyy zzzz kkkk',
             },
         });
 
